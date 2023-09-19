@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.6.vendor:64
 
 PRODUCT_PACKAGES += \
-    CameraGo
+    Aperture
 
 PRODUCT_PACKAGES += \
     libcamera_metadata_shim
@@ -187,6 +187,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/com.android.hotwordenrollment.common.util.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.hotwordenrollment.common.util.xml \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+
+# HWUI
+HWUI_COMPILE_FOR_PERF := true      
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -320,6 +323,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
+# Dex/ART optimization
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
+USE_DEX2OAT_DEBUG := false
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi-libperfmgr\
@@ -372,6 +380,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
+    ApertureOverlayCamellia \
     CarrierConfigOverlayCamellia \
     FrameworksResOverlayCamellia \
     SettingsOverlayCamellia \

@@ -25,7 +25,7 @@
       "Name": "CPUBigClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq",
       "Values": [
-        "2203000",
+        "2400000",
         "1903000",
         "1418000"
       ],
@@ -36,7 +36,7 @@
       "Name": "CPUBigClusterMinFreq",
       "Path": "/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq",
       "Values": [
-        "2203000",
+        "2400000",
         "1650000",
         "1042000",
         "840000"
@@ -107,16 +107,6 @@
         "10",
         "50",
         "100"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "CPUSchedBoost",
-      "Path": "/sys/devices/system/cpu/sched/sched_boost",
-      "Values": [
-        "0",
-        "3",
-        "6"
       ],
       "ResetOnInit": true
     },
@@ -223,7 +213,7 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "2203000"
+      "Value": "2400000"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
@@ -294,55 +284,49 @@
     {
       "PowerHint": "LAUNCH",
       "Node": "FBTBoostTA",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
-      "Duration": 5000,
-      "Value": "2203000"
+      "Duration": 3000,
+      "Value": "2400000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "1650000"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPULittleClusterMinFreq",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "1812000"
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "CPUSchedBoost",
-      "Duration": 5000,
-      "Value": "6"
-    },
-    {
-      "PowerHint": "LAUNCH",
       "Node": "TAUclampMin",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "50"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "UclampMin",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "100"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "GPUBlockBoost",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "101"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "DRAMOppMin",
-      "Duration": 5000,
+      "Duration": 3000,
       "Value": "1"
     },
     {
