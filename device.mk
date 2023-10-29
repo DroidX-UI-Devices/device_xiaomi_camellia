@@ -312,6 +312,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayCamellia \
     FrameworksResOverlayCamellia \
+    NfcOverlayCamellia \
     SettingsOverlayCamellia \
     SystemUIOverlayCamellia \
     TelephonyOverlayCamellia \
