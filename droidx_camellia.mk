@@ -11,18 +11,30 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device makefile.
 $(call inherit-product, device/xiaomi/camellia/device.mk)
 
-# Inherit some common PixelExperience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common DroidX-UI stuff.
+$(call inherit-product, vendor/droidx/config/common_full_phone.mk)
 
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_USES_AOSP_RECOVERY := true
 TARGET_SUPPORTS_QUICK_TAP := true
 
-PRODUCT_NAME := aosp_camellia
+PRODUCT_NAME := droidx_camellia
 PRODUCT_DEVICE := camellia
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 10 5G
+
+# Add DroidX-UI Flags
+TARGET_INCLUDE_WIFI_EXT := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+DROIDX_BUILD_TYPE := OFFICIAL
+DROIDX_GAPPS := true
+TARGET_USE_GOOGLE_TELEPHONY := true
+
+# DroidX-UI maintainer stuff 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+ro.droidx.maintainer= Noah
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
